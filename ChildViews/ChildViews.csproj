@@ -1,18 +1,29 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>aspnetcore2.2</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="Views\AChild\Index.cshtml" />
-  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Views\AChild\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\AChild\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewComponents\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AChildComponent.cs" />
   </ItemGroup>
 </Project>

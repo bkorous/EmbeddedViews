@@ -16,9 +16,11 @@ namespace ChildViews.Controllers
             return View();
         }
 
-        public IActionResult PartialIndex()
+        [HttpPost]
+        public IActionResult _Edit(int i)
         {
-            return PartialView();
+            i+=1;
+            return PartialView(i);
         }
     }
 }

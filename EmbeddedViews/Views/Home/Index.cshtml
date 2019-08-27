@@ -6,3 +6,31 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div class="card">
+    <div class="card-body" id="content-holder">
+
+        <vc:a-child  i="2"></vc:a-child>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-success" type="button" id="postToPartialButton">Post To Partial</button>
+    </div>
+</div>
+
+@section  Scripts {
+<script>
+    $(document).ready(function () {
+        $('#postToPartialButton').on('click', function () {
+            var url = $('#child-edit-partial').data('form-url');
+            var value = $('#model-value-holder').val();
+            $.ajax({
+                url: url+"?i="+value,
+                method: "post",
+                success: function (data, textStatus, jqXHR) {
+                    $('#content-holder').html(data);
+                }
+            });
+        });
+    })
+</script>
+}
