@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChildViews
+namespace ChildViews.ViewComponents
 {
     public partial class AChildViewComponent : ViewComponent
     {
